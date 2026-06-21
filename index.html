@@ -213,6 +213,7 @@
     aspect-ratio: 4 / 3;
     object-fit: cover;
     display: block;
+    cursor: pointer;
   }
 
   /* Floor plans */
@@ -403,6 +404,8 @@
   }
 
   .cta-section .btn-group {
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
   }
 
@@ -552,6 +555,7 @@
     <p class="subtext">Golf course community feel. Cherry Creek Schools. Low-maintenance townhome living with room to spread out.</p>
     <div class="btn-group">
       <a href="#video" class="btn btn-outline-cream">View Property Video</a>
+      <a href="Ridgeview_Eagle_Bend_Neighborhood_Guide_Final.pdf" class="btn btn-outline-cream" download>Download Your Neighborhood Guide</a>
     </div>
   </div>
 </header>
@@ -615,7 +619,7 @@
         </ul>
       </div>
       <div>
-        <img class="photo-placeholder" src="jamison%20ai%20shots/living%20room.jpg" width="100%" style="object-fit: cover; display: block;" alt="Living room with fireplace">
+        <img class="photo-placeholder" src="jamison%20ai%20shots/living%20room.jpg" width="100%" style="object-fit: cover; display: block;" alt="Living room with fireplace" onclick="openLightbox(this.src, this.alt)">
       </div>
     </div>
   </div>
@@ -673,39 +677,39 @@
 
     <div class="gallery-grid">
       <figure class="gallery-item">
-        <img class="photo-placeholder" src="22027%20E%20Jamison%20Place%20Photos/1_exterior-1.webp" width="100%" style="object-fit: cover; display: block;" alt="Exterior with attached two-car garage">
+        <img class="photo-placeholder" src="22027%20E%20Jamison%20Place%20Photos/1_exterior-1.webp" width="100%" style="object-fit: cover; display: block;" alt="Exterior with attached two-car garage" onclick="openLightbox(this.src, this.alt)">
         <figcaption>Exterior with attached two-car garage</figcaption>
       </figure>
       <figure class="gallery-item">
-        <img class="photo-placeholder" src="22027%20E%20Jamison%20Place%20Photos/5_interior-4.webp" width="100%" style="object-fit: cover; display: block;" alt="Kitchen with stainless appliances">
+        <img class="photo-placeholder" src="22027%20E%20Jamison%20Place%20Photos/5_interior-4.webp" width="100%" style="object-fit: cover; display: block;" alt="Kitchen with stainless appliances" onclick="openLightbox(this.src, this.alt)">
         <figcaption>Kitchen with stainless appliances</figcaption>
       </figure>
       <figure class="gallery-item">
-        <img class="photo-placeholder" src="jamison%20ai%20shots/living%20room.jpg" width="100%" style="object-fit: cover; display: block;" alt="Main living area with fireplace">
+        <img class="photo-placeholder" src="jamison%20ai%20shots/living%20room.jpg" width="100%" style="object-fit: cover; display: block;" alt="Main living area with fireplace" onclick="openLightbox(this.src, this.alt)">
         <figcaption>Main living area with fireplace</figcaption>
       </figure>
       <figure class="gallery-item">
-        <img class="photo-placeholder" src="jamison%20ai%20shots/kitchen_nook.jpg" width="100%" style="object-fit: cover; display: block;" alt="Dining nook off the kitchen">
+        <img class="photo-placeholder" src="jamison%20ai%20shots/kitchen_nook.jpg" width="100%" style="object-fit: cover; display: block;" alt="Dining nook off the kitchen" onclick="openLightbox(this.src, this.alt)">
         <figcaption>Dining nook off the kitchen</figcaption>
       </figure>
       <figure class="gallery-item">
-        <img class="photo-placeholder" src="22027%20E%20Jamison%20Place%20Photos/14_interior-13.webp" width="100%" style="object-fit: cover; display: block;" alt="Bright bedroom space">
+        <img class="photo-placeholder" src="22027%20E%20Jamison%20Place%20Photos/14_interior-13.webp" width="100%" style="object-fit: cover; display: block;" alt="Bright bedroom space" onclick="openLightbox(this.src, this.alt)">
         <figcaption>Bright bedroom space</figcaption>
       </figure>
       <figure class="gallery-item">
-        <img class="photo-placeholder" src="jamison%20ai%20shots/primary.jpg" width="100%" style="object-fit: cover; display: block;" alt="Primary bedroom">
+        <img class="photo-placeholder" src="jamison%20ai%20shots/primary.jpg" width="100%" style="object-fit: cover; display: block;" alt="Primary bedroom" onclick="openLightbox(this.src, this.alt)">
         <figcaption>Primary bedroom</figcaption>
       </figure>
       <figure class="gallery-item">
-        <img class="photo-placeholder" src="jamison%20ai%20shots/basement%20bedroom.jpg" width="100%" style="object-fit: cover; display: block;" alt="Lower-level bedroom">
+        <img class="photo-placeholder" src="jamison%20ai%20shots/basement%20bedroom.jpg" width="100%" style="object-fit: cover; display: block;" alt="Lower-level bedroom" onclick="openLightbox(this.src, this.alt)">
         <figcaption>Lower-level bedroom</figcaption>
       </figure>
       <figure class="gallery-item">
-        <img class="photo-placeholder" src="22027%20E%20Jamison%20Place%20Photos/20_interior-19.webp" width="100%" style="object-fit: cover; display: block;" alt="Primary bathroom">
+        <img class="photo-placeholder" src="22027%20E%20Jamison%20Place%20Photos/20_interior-19.webp" width="100%" style="object-fit: cover; display: block;" alt="Primary bathroom" onclick="openLightbox(this.src, this.alt)">
         <figcaption>Primary bathroom</figcaption>
       </figure>
       <figure class="gallery-item">
-        <img class="photo-placeholder" src="jamison%20ai%20shots/closet.jpg" width="100%" style="object-fit: cover; display: block;" alt="Walk-in closet storage">
+        <img class="photo-placeholder" src="jamison%20ai%20shots/closet.jpg" width="100%" style="object-fit: cover; display: block;" alt="Walk-in closet storage" onclick="openLightbox(this.src, this.alt)">
         <figcaption>Walk-in closet storage</figcaption>
       </figure>
     </div>
@@ -721,11 +725,11 @@
 
     <div class="lifestyle-grid">
       <figure class="lifestyle-item">
-        <img class="photo-placeholder" src="22027%20E%20Jamison%20Place%20Photos/37_drone-12.webp" width="100%" style="object-fit: cover; display: block;" alt="22027 E Jamison Place, Ridgeview Eagle Bend">
+        <img class="photo-placeholder" src="22027%20E%20Jamison%20Place%20Photos/37_drone-12.webp" width="100%" style="object-fit: cover; display: block;" alt="22027 E Jamison Place, Ridgeview Eagle Bend" onclick="openLightbox(this.src, this.alt)">
         <figcaption>22027 E Jamison Place, Ridgeview Eagle Bend</figcaption>
       </figure>
       <figure class="lifestyle-item">
-        <img class="photo-placeholder" src="22027%20E%20Jamison%20Place%20Photos/29_drone-4.webp" width="100%" style="object-fit: cover; display: block;" alt="Saddle Rock Golf Course">
+        <img class="photo-placeholder" src="22027%20E%20Jamison%20Place%20Photos/29_drone-4.webp" width="100%" style="object-fit: cover; display: block;" alt="Saddle Rock Golf Course" onclick="openLightbox(this.src, this.alt)">
         <figcaption>Saddle Rock Golf Course</figcaption>
       </figure>
     </div>
@@ -780,6 +784,7 @@
     <p class="body-text">The best way to understand the layout, the levels, the light, and the community setting is to see it in person.</p>
     <div class="btn-group">
       <a href="https://linktr.ee/marcbayes" target="_blank" class="btn btn-outline-cream">Schedule a Private Tour</a>
+      <a href="Ridgeview_Eagle_Bend_Neighborhood_Guide_Final.pdf" class="btn btn-outline-cream" download>Download Your Neighborhood Guide</a>
     </div>
   </div>
 </section>
