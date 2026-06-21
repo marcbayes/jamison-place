@@ -12,7 +12,7 @@
     --cream: #F5F0E8;
     --charcoal: #1C1C1C;
     --gold: #8B7355;
-    --dark: #1A1A1A;
+    --dark: #1E2A3A;
     --tan: #EDE8DE;
     --placeholder: #D4CFC6;
   }
@@ -34,9 +34,13 @@
   a { text-decoration: none; }
 
   .wrap {
-    max-width: 1100px;
+    max-width: 1280px;
     margin: 0 auto;
     padding: 0 24px;
+  }
+
+  .wrap-wide {
+    max-width: 1500px;
   }
 
   section {
@@ -104,7 +108,7 @@
     min-height: 100vh;
     display: flex;
     align-items: flex-end;
-    background-image: url('22027%20E%20Jamison%20Place%20Photos/26_drone-1.webp');
+    background-image: url('22027%20E%20Jamison%20Place%20Photos/1_exterior-1.webp');
     background-size: cover;
     background-position: center;
     overflow: hidden;
@@ -229,6 +233,41 @@
     width: 100%;
     height: auto;
     display: block;
+    cursor: pointer;
+  }
+
+  /* Lightbox */
+  .lightbox-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.85);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    padding: 24px;
+  }
+
+  .lightbox-overlay.active {
+    display: flex;
+  }
+
+  .lightbox-overlay img {
+    max-width: 90vw;
+    max-height: 90vh;
+    object-fit: contain;
+  }
+
+  .lightbox-close {
+    position: absolute;
+    top: 24px;
+    right: 32px;
+    color: #fff;
+    font-size: 2rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    line-height: 1;
   }
 
   /* Dark sections */
@@ -283,8 +322,8 @@
   /* Gallery */
   .gallery-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 24px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
     margin-top: 48px;
   }
 
@@ -306,13 +345,6 @@
     margin-top: 10px;
     font-size: 0.85rem;
     color: var(--charcoal);
-  }
-
-  .staged-note {
-    margin-top: 24px;
-    font-size: 0.85rem;
-    font-style: italic;
-    color: #6b6b6b;
   }
 
   /* Location cards */
@@ -506,7 +538,6 @@
     <h1>22027 E Jamison Place</h1>
     <p class="subtext">Golf course community feel. Cherry Creek Schools. Low-maintenance townhome living with room to spread out.</p>
     <div class="btn-group">
-      <a href="sms:+13036193052" class="btn btn-outline-cream">Text Marc About This Home</a>
       <a href="#video" class="btn btn-outline-cream">View Property Video</a>
     </div>
   </div>
@@ -517,12 +548,16 @@
   <div class="wrap">
     <span class="eyebrow">A Better Landing Page Than a Listing Feed</span>
     <h2>Established, comfortable, and easy to live in.</h2>
-    <p class="body-text">This townhome gives buyers the things that matter day to day: a low-maintenance setup, a comfortable multi-level layout, Cherry Creek Schools, a two-car garage, and a southeast metro location with easy routes around town.</p>
+    <p class="body-text">This townhome gives buyers the things that matter day to day: a low-maintenance setup, a comfortable multi-level layout, Creekside Elementary, a two-car garage, and a southeast metro location with easy routes around town.</p>
 
     <div class="stats-grid">
       <div class="stat-item">
         <div class="stat-value">$520,000</div>
         <div class="stat-label">List Price</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-value">2-Car</div>
+        <div class="stat-label">Attached Garage</div>
       </div>
       <div class="stat-item">
         <div class="stat-value">3</div>
@@ -533,16 +568,12 @@
         <div class="stat-label">Bathrooms</div>
       </div>
       <div class="stat-item">
-        <div class="stat-value">2-Car</div>
-        <div class="stat-label">Attached Garage</div>
+        <div class="stat-value">2,430</div>
+        <div class="stat-label">Total Square Feet</div>
       </div>
       <div class="stat-item">
         <div class="stat-value">1,837</div>
         <div class="stat-label">Finished Square Feet</div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-value">2,430</div>
-        <div class="stat-label">Total Square Feet</div>
       </div>
       <div class="stat-item">
         <div class="stat-value">$325/mo</div>
@@ -586,15 +617,15 @@
 
     <div class="floorplan-grid">
       <figure class="floorplan-item">
-        <img src="22027%20E%20Jamison%20Place%20Photos/First%20Floor(2).webp" width="100%" style="width: 100%; height: auto; display: block;" alt="Lower level floor plan">
+        <img src="22027%20E%20Jamison%20Place%20Photos/First%20Floor(2).webp" width="100%" style="width: 100%; height: auto; display: block;" alt="Lower level floor plan" onclick="openLightbox(this.src, this.alt)">
         <figcaption>Lower Level</figcaption>
       </figure>
       <figure class="floorplan-item">
-        <img src="22027%20E%20Jamison%20Place%20Photos/Second%20Floor(2).webp" width="100%" style="width: 100%; height: auto; display: block;" alt="Main level floor plan">
+        <img src="22027%20E%20Jamison%20Place%20Photos/Second%20Floor(2).webp" width="100%" style="width: 100%; height: auto; display: block;" alt="Main level floor plan" onclick="openLightbox(this.src, this.alt)">
         <figcaption>Main Level</figcaption>
       </figure>
       <figure class="floorplan-item">
-        <img src="22027%20E%20Jamison%20Place%20Photos/Third%20Floor.webp" width="100%" style="width: 100%; height: auto; display: block;" alt="Upper level floor plan">
+        <img src="22027%20E%20Jamison%20Place%20Photos/Third%20Floor.webp" width="100%" style="width: 100%; height: auto; display: block;" alt="Upper level floor plan" onclick="openLightbox(this.src, this.alt)">
         <figcaption>Upper Level</figcaption>
       </figure>
     </div>
@@ -609,15 +640,11 @@
         <span class="eyebrow">Full Property Video</span>
         <h2>Take a closer look inside.</h2>
         <p class="body-text">Photos and floor plans help, but video gives you a better feel for the flow of the home. This section is reserved for the full property video once it is uploaded.</p>
-        <div class="btn-group">
-          <a href="sms:+13036193052" class="btn btn-outline-cream">Ask Marc for the Video</a>
-        </div>
       </div>
       <div>
         <!-- VIDEO: property-tour-embed -->
         <div class="video-placeholder">
           <div class="play-icon">&#9658;</div>
-          <span>Video coming soon</span>
         </div>
       </div>
     </div>
@@ -626,7 +653,7 @@
 
 <!-- SECTION 5 — PHOTO GALLERY -->
 <section>
-  <div class="wrap">
+  <div class="wrap wrap-wide">
     <span class="eyebrow">Curated Property Gallery</span>
     <h2>The spaces buyers will care about most.</h2>
     <p class="body-text">The gallery focuses on the exterior, kitchen, living space, bathrooms, bedrooms, storage, and layout. Enough to understand the home without turning the page into a photo dump.</p>
@@ -637,7 +664,7 @@
         <figcaption>Exterior with attached two-car garage</figcaption>
       </figure>
       <figure class="gallery-item">
-        <img class="photo-placeholder" src="22027%20E%20Jamison%20Place%20Photos/2_interior-1.webp" width="100%" style="object-fit: cover; display: block;" alt="Kitchen with stainless appliances">
+        <img class="photo-placeholder" src="22027%20E%20Jamison%20Place%20Photos/5_interior-4.webp" width="100%" style="object-fit: cover; display: block;" alt="Kitchen with stainless appliances">
         <figcaption>Kitchen with stainless appliances</figcaption>
       </figure>
       <figure class="gallery-item">
@@ -649,8 +676,8 @@
         <figcaption>Dining nook off the kitchen</figcaption>
       </figure>
       <figure class="gallery-item">
-        <img class="photo-placeholder" src="22027%20E%20Jamison%20Place%20Photos/5_interior-4.webp" width="100%" style="object-fit: cover; display: block;" alt="Bedroom with natural light">
-        <figcaption>Bedroom with natural light</figcaption>
+        <img class="photo-placeholder" src="22027%20E%20Jamison%20Place%20Photos/14_interior-13.webp" width="100%" style="object-fit: cover; display: block;" alt="Bright bedroom space">
+        <figcaption>Bright bedroom space</figcaption>
       </figure>
       <figure class="gallery-item">
         <img class="photo-placeholder" src="jamison%20ai%20shots/primary.jpg" width="100%" style="object-fit: cover; display: block;" alt="Primary bedroom">
@@ -661,7 +688,7 @@
         <figcaption>Lower-level bedroom</figcaption>
       </figure>
       <figure class="gallery-item">
-        <img class="photo-placeholder" src="22027%20E%20Jamison%20Place%20Photos/9_interior-8.webp" width="100%" style="object-fit: cover; display: block;" alt="Primary bathroom">
+        <img class="photo-placeholder" src="22027%20E%20Jamison%20Place%20Photos/20_interior-19.webp" width="100%" style="object-fit: cover; display: block;" alt="Primary bathroom">
         <figcaption>Primary bathroom</figcaption>
       </figure>
       <figure class="gallery-item">
@@ -681,15 +708,14 @@
 
     <div class="lifestyle-grid">
       <figure class="lifestyle-item">
-        <img class="photo-placeholder" src="jamison%20ai%20shots/living%20room.jpg" width="100%" style="object-fit: cover; display: block;" alt="Living space, digitally styled for feel">
-        <figcaption>Living space, digitally styled for feel</figcaption>
+        <img class="photo-placeholder" src="22027%20E%20Jamison%20Place%20Photos/37_drone-12.webp" width="100%" style="object-fit: cover; display: block;" alt="Aerial view of the home and surrounding community">
+        <figcaption>Aerial view of the home and surrounding community</figcaption>
       </figure>
       <figure class="lifestyle-item">
-        <img class="photo-placeholder" src="jamison%20ai%20shots/kitchen_nook.jpg" width="100%" style="object-fit: cover; display: block;" alt="Dining nook, digitally styled for scale">
-        <figcaption>Dining nook, digitally styled for scale</figcaption>
+        <img class="photo-placeholder" src="22027%20E%20Jamison%20Place%20Photos/29_drone-4.webp" width="100%" style="object-fit: cover; display: block;" alt="Aerial view of the neighborhood and golf course setting">
+        <figcaption>Aerial view of the neighborhood and golf course setting</figcaption>
       </figure>
     </div>
-    <p class="staged-note">Some images have been virtually staged to illustrate scale and potential use of space.</p>
   </div>
 </section>
 
@@ -697,24 +723,20 @@
 <section>
   <div class="wrap">
     <h2>Connected to the southeast metro.</h2>
-    <p class="body-text">Jamison Place sits in an established Aurora community with Cherry Creek Schools, nearby golf course surroundings, and convenient access toward E-470, DTC, Southlands, Parker, and other southeast metro destinations.</p>
+    <p class="body-text">Jamison Place sits in an established Aurora community with Liberty Middle nearby, golf course surroundings, and convenient access toward E-470, DTC, Southlands, Parker, and other southeast metro destinations.</p>
 
     <div class="location-grid">
-      <div class="location-card">
-        <span class="card-label">Aurora</span>
-        <span class="card-desc">Established southeast metro setting.</span>
-      </div>
       <div class="location-card">
         <span class="card-label">Ridgeview Eagle Bend</span>
         <span class="card-desc">Community feel with golf course surroundings.</span>
       </div>
       <div class="location-card">
-        <span class="card-label">Cherry Creek Schools</span>
+        <span class="card-label">Creekside Elementary, Liberty Middle, Cherry Creek Trail High School</span>
         <span class="card-desc">A major location benefit for many buyers.</span>
       </div>
       <div class="location-card">
-        <span class="card-label">Easy Routes</span>
-        <span class="card-desc">Access toward E-470, DTC, Southlands, and Parker.</span>
+        <span class="card-label">Local Amenities</span>
+        <span class="card-desc">Easy access to E-470, DTC, Southlands Mall, Parker, and Saddle Rock Golf Course.</span>
       </div>
     </div>
   </div>
@@ -727,8 +749,7 @@
     <h2>Photos help. Walking it matters more.</h2>
     <p class="body-text">The best way to understand the layout, the levels, the light, and the community setting is to see it in person.</p>
     <div class="btn-group">
-      <a href="sms:+13036193052" class="btn btn-outline-cream">Schedule a Private Tour</a>
-      <a href="tel:+13036193052" class="btn btn-outline-cream">Call Marc</a>
+      <a href="https://linktr.ee/marcbayes" target="_blank" class="btn btn-outline-cream">Schedule a Private Tour</a>
     </div>
   </div>
 </section>
@@ -736,7 +757,6 @@
 <!-- SECTION 9 — CONTACT -->
 <section>
   <div class="wrap">
-    <span class="eyebrow">Your Contact</span>
     <div class="contact-layout">
       <div class="headshot-placeholder">
         <img src="headshot%20circle%20cutout.jpg" width="100%" style="object-fit: cover; display: block;" alt="Marc Bayes headshot">
@@ -764,6 +784,34 @@
     <div class="footer-contact">Marc Bayes | 303-619-3052 | marcbayes@kw.com | linktr.ee/marcbayes</div>
   </div>
 </footer>
+
+<!-- LIGHTBOX -->
+<div class="lightbox-overlay" id="lightbox">
+  <button class="lightbox-close" onclick="closeLightbox()" aria-label="Close">&times;</button>
+  <img id="lightbox-img" src="" alt="">
+</div>
+
+<script>
+  function openLightbox(src, alt) {
+    var lb = document.getElementById('lightbox');
+    var img = document.getElementById('lightbox-img');
+    img.src = src;
+    img.alt = alt;
+    lb.classList.add('active');
+  }
+
+  function closeLightbox() {
+    document.getElementById('lightbox').classList.remove('active');
+  }
+
+  document.getElementById('lightbox').addEventListener('click', function (e) {
+    if (e.target === this) closeLightbox();
+  });
+
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') closeLightbox();
+  });
+</script>
 
 </body>
 </html>
