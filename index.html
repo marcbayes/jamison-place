@@ -104,20 +104,10 @@
     min-height: 100vh;
     display: flex;
     align-items: flex-end;
-    background: var(--placeholder);
+    background-image: url('22027%20E%20Jamison%20Place%20Photos/26_drone-1.webp');
+    background-size: cover;
+    background-position: center;
     overflow: hidden;
-  }
-
-  .hero-photo-placeholder {
-    position: absolute;
-    inset: 0;
-    background: var(--placeholder);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #8a8a8a;
-    font-size: 0.85rem;
-    letter-spacing: 0.05em;
   }
 
   .hero-overlay {
@@ -212,15 +202,10 @@
 
   .photo-placeholder {
     background: var(--placeholder);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #7a7a7a;
-    font-size: 0.8rem;
-    letter-spacing: 0.04em;
-    text-align: center;
     width: 100%;
     aspect-ratio: 4 / 3;
+    object-fit: cover;
+    display: block;
   }
 
   /* Floor plans */
@@ -240,8 +225,10 @@
     text-transform: uppercase;
   }
 
-  .floorplan-item .photo-placeholder {
-    aspect-ratio: 3 / 4;
+  .floorplan-item img {
+    width: 100%;
+    height: auto;
+    display: block;
   }
 
   /* Dark sections */
@@ -388,13 +375,14 @@
     border-radius: 50%;
     background: var(--placeholder);
     flex-shrink: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #7a7a7a;
-    font-size: 0.7rem;
-    text-align: center;
-    padding: 8px;
+    overflow: hidden;
+  }
+
+  .headshot-placeholder img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
   }
 
   .contact-info h2 {
@@ -512,8 +500,6 @@
 
 <!-- HERO -->
 <header class="hero">
-  <!-- PHOTO: hero-exterior -->
-  <div class="hero-photo-placeholder">PHOTO: hero-exterior</div>
   <div class="hero-overlay"></div>
   <div class="hero-content">
     <span class="eyebrow">Aurora, Colorado | Ridgeview Eagle Bend</span>
@@ -585,8 +571,7 @@
         </ul>
       </div>
       <div>
-        <!-- PHOTO: living-room-fireplace -->
-        <div class="photo-placeholder">PHOTO: living-room-fireplace</div>
+        <img class="photo-placeholder" src="jamison%20ai%20shots/living%20room.jpg" width="100%" style="object-fit: cover; display: block;" alt="Living room with fireplace">
       </div>
     </div>
   </div>
@@ -601,18 +586,15 @@
 
     <div class="floorplan-grid">
       <figure class="floorplan-item">
-        <!-- FLOORPLAN: lower-level -->
-        <div class="photo-placeholder">FLOORPLAN: lower-level</div>
+        <img src="22027%20E%20Jamison%20Place%20Photos/First%20Floor(2).webp" width="100%" style="width: 100%; height: auto; display: block;" alt="Lower level floor plan">
         <figcaption>Lower Level</figcaption>
       </figure>
       <figure class="floorplan-item">
-        <!-- FLOORPLAN: main-level -->
-        <div class="photo-placeholder">FLOORPLAN: main-level</div>
+        <img src="22027%20E%20Jamison%20Place%20Photos/Second%20Floor(2).webp" width="100%" style="width: 100%; height: auto; display: block;" alt="Main level floor plan">
         <figcaption>Main Level</figcaption>
       </figure>
       <figure class="floorplan-item">
-        <!-- FLOORPLAN: upper-level -->
-        <div class="photo-placeholder">FLOORPLAN: upper-level</div>
+        <img src="22027%20E%20Jamison%20Place%20Photos/Third%20Floor.webp" width="100%" style="width: 100%; height: auto; display: block;" alt="Upper level floor plan">
         <figcaption>Upper Level</figcaption>
       </figure>
     </div>
@@ -651,48 +633,39 @@
 
     <div class="gallery-grid">
       <figure class="gallery-item">
-        <!-- PHOTO: exterior-garage -->
-        <div class="photo-placeholder">PHOTO: exterior-garage</div>
+        <img class="photo-placeholder" src="22027%20E%20Jamison%20Place%20Photos/1_exterior-1.webp" width="100%" style="object-fit: cover; display: block;" alt="Exterior with attached two-car garage">
         <figcaption>Exterior with attached two-car garage</figcaption>
       </figure>
       <figure class="gallery-item">
-        <!-- PHOTO: kitchen-appliances -->
-        <div class="photo-placeholder">PHOTO: kitchen-appliances</div>
+        <img class="photo-placeholder" src="22027%20E%20Jamison%20Place%20Photos/2_interior-1.webp" width="100%" style="object-fit: cover; display: block;" alt="Kitchen with stainless appliances">
         <figcaption>Kitchen with stainless appliances</figcaption>
       </figure>
       <figure class="gallery-item">
-        <!-- PHOTO: living-area-fireplace -->
-        <div class="photo-placeholder">PHOTO: living-area-fireplace</div>
+        <img class="photo-placeholder" src="jamison%20ai%20shots/living%20room.jpg" width="100%" style="object-fit: cover; display: block;" alt="Main living area with fireplace">
         <figcaption>Main living area with fireplace</figcaption>
       </figure>
       <figure class="gallery-item">
-        <!-- PHOTO: dining-nook -->
-        <div class="photo-placeholder">PHOTO: dining-nook</div>
+        <img class="photo-placeholder" src="jamison%20ai%20shots/kitchen_nook.jpg" width="100%" style="object-fit: cover; display: block;" alt="Dining nook off the kitchen">
         <figcaption>Dining nook off the kitchen</figcaption>
       </figure>
       <figure class="gallery-item">
-        <!-- PHOTO: bedroom-natural-light -->
-        <div class="photo-placeholder">PHOTO: bedroom-natural-light</div>
+        <img class="photo-placeholder" src="22027%20E%20Jamison%20Place%20Photos/5_interior-4.webp" width="100%" style="object-fit: cover; display: block;" alt="Bedroom with natural light">
         <figcaption>Bedroom with natural light</figcaption>
       </figure>
       <figure class="gallery-item">
-        <!-- PHOTO: primary-bedroom -->
-        <div class="photo-placeholder">PHOTO: primary-bedroom</div>
+        <img class="photo-placeholder" src="jamison%20ai%20shots/primary.jpg" width="100%" style="object-fit: cover; display: block;" alt="Primary bedroom">
         <figcaption>Primary bedroom</figcaption>
       </figure>
       <figure class="gallery-item">
-        <!-- PHOTO: lower-level-bedroom -->
-        <div class="photo-placeholder">PHOTO: lower-level-bedroom</div>
+        <img class="photo-placeholder" src="jamison%20ai%20shots/basement%20bedroom.jpg" width="100%" style="object-fit: cover; display: block;" alt="Lower-level bedroom">
         <figcaption>Lower-level bedroom</figcaption>
       </figure>
       <figure class="gallery-item">
-        <!-- PHOTO: primary-bathroom -->
-        <div class="photo-placeholder">PHOTO: primary-bathroom</div>
+        <img class="photo-placeholder" src="22027%20E%20Jamison%20Place%20Photos/9_interior-8.webp" width="100%" style="object-fit: cover; display: block;" alt="Primary bathroom">
         <figcaption>Primary bathroom</figcaption>
       </figure>
       <figure class="gallery-item">
-        <!-- PHOTO: walkin-closet -->
-        <div class="photo-placeholder">PHOTO: walkin-closet</div>
+        <img class="photo-placeholder" src="jamison%20ai%20shots/closet.jpg" width="100%" style="object-fit: cover; display: block;" alt="Walk-in closet storage">
         <figcaption>Walk-in closet storage</figcaption>
       </figure>
     </div>
@@ -708,13 +681,11 @@
 
     <div class="lifestyle-grid">
       <figure class="lifestyle-item">
-        <!-- PHOTO: staged-living-space -->
-        <div class="photo-placeholder">PHOTO: staged-living-space</div>
+        <img class="photo-placeholder" src="jamison%20ai%20shots/living%20room.jpg" width="100%" style="object-fit: cover; display: block;" alt="Living space, digitally styled for feel">
         <figcaption>Living space, digitally styled for feel</figcaption>
       </figure>
       <figure class="lifestyle-item">
-        <!-- PHOTO: staged-dining-nook -->
-        <div class="photo-placeholder">PHOTO: staged-dining-nook</div>
+        <img class="photo-placeholder" src="jamison%20ai%20shots/kitchen_nook.jpg" width="100%" style="object-fit: cover; display: block;" alt="Dining nook, digitally styled for scale">
         <figcaption>Dining nook, digitally styled for scale</figcaption>
       </figure>
     </div>
@@ -767,8 +738,9 @@
   <div class="wrap">
     <span class="eyebrow">Your Contact</span>
     <div class="contact-layout">
-      <!-- PHOTO: agent-headshot -->
-      <div class="headshot-placeholder">PHOTO: agent-headshot</div>
+      <div class="headshot-placeholder">
+        <img src="headshot%20circle%20cutout.jpg" width="100%" style="object-fit: cover; display: block;" alt="Marc Bayes headshot">
+      </div>
       <div class="contact-info">
         <h2>Marc Bayes</h2>
         <p class="body-text">Have a question about the home, the community, or whether it fits your search? Reach out and I'll help you sort through it.</p>
