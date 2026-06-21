@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>22027 E Jamison Place | Aurora, Colorado</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #F5F0E8;
+    --charcoal: #1C1C1C;
+    --gold: #8B7355;
+    --dark: #1A1A1A;
+    --tan: #EDE8DE;
+    --placeholder: #D4CFC6;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--cream);
+    color: var(--charcoal);
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+  }
+
+  h1, h2, h3 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+  }
+
+  a { text-decoration: none; }
+
+  .wrap {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  section {
+    padding: 80px 0;
+  }
+
+  .eyebrow {
+    color: var(--gold);
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+    display: block;
+  }
+
+  h2 {
+    font-size: 2.1rem;
+    margin-bottom: 20px;
+  }
+
+  p.body-text {
+    font-size: 1rem;
+    max-width: 700px;
+    color: var(--charcoal);
+  }
+
+  /* Buttons */
+  .btn {
+    display: inline-block;
+    padding: 14px 28px;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 500;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    border-radius: 2px;
+    transition: opacity 0.2s ease;
+    cursor: pointer;
+  }
+  .btn:hover { opacity: 0.85; }
+
+  .btn-outline-cream {
+    background: transparent;
+    color: #F5F0E8;
+    border: 1px solid #F5F0E8;
+  }
+
+  .btn-fill-dark {
+    background: var(--dark);
+    color: #F5F0E8;
+    border: 1px solid var(--dark);
+  }
+
+  .btn-group {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin-top: 32px;
+  }
+
+  /* HERO */
+  .hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: flex-end;
+    background: var(--placeholder);
+    overflow: hidden;
+  }
+
+  .hero-photo-placeholder {
+    position: absolute;
+    inset: 0;
+    background: var(--placeholder);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #8a8a8a;
+    font-size: 0.85rem;
+    letter-spacing: 0.05em;
+  }
+
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.75) 100%);
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    padding: 60px 24px 80px;
+    max-width: 1100px;
+    margin: 0 auto;
+    width: 100%;
+    color: #fff;
+  }
+
+  .hero-content .eyebrow {
+    color: #D9C9A8;
+  }
+
+  .hero-content h1 {
+    font-size: 3.2rem;
+    color: #fff;
+    margin-bottom: 18px;
+  }
+
+  .hero-content .subtext {
+    font-size: 1.05rem;
+    max-width: 600px;
+    color: #EDEDED;
+  }
+
+  /* Stats grid */
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-flow: row;
+    gap: 28px 40px;
+    margin-top: 48px;
+    max-width: 700px;
+  }
+
+  .stat-item {
+    border-bottom: 1px solid #D9D2C4;
+    padding-bottom: 16px;
+  }
+
+  .stat-value {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--charcoal);
+  }
+
+  .stat-label {
+    font-size: 0.85rem;
+    color: var(--gold);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-top: 4px;
+  }
+
+  /* Two column layout */
+  .two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 56px;
+    align-items: center;
+  }
+
+  ul.bullets {
+    margin-top: 24px;
+    padding-left: 0;
+    list-style: none;
+  }
+
+  ul.bullets li {
+    position: relative;
+    padding-left: 24px;
+    margin-bottom: 14px;
+    font-size: 0.98rem;
+  }
+
+  ul.bullets li::before {
+    content: "—";
+    position: absolute;
+    left: 0;
+    color: var(--gold);
+  }
+
+  .photo-placeholder {
+    background: var(--placeholder);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #7a7a7a;
+    font-size: 0.8rem;
+    letter-spacing: 0.04em;
+    text-align: center;
+    width: 100%;
+    aspect-ratio: 4 / 3;
+  }
+
+  /* Floor plans */
+  .floorplan-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+    margin-top: 48px;
+  }
+
+  .floorplan-item figcaption {
+    margin-top: 12px;
+    font-size: 0.9rem;
+    color: var(--gold);
+    text-align: center;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+  }
+
+  .floorplan-item .photo-placeholder {
+    aspect-ratio: 3 / 4;
+  }
+
+  /* Dark sections */
+  .dark-section {
+    background: var(--dark);
+    color: #F5F0E8;
+  }
+
+  .dark-section .eyebrow {
+    color: #C9B896;
+  }
+
+  .dark-section h2 {
+    color: #fff;
+  }
+
+  .dark-section p.body-text {
+    color: #D9D4CC;
+  }
+
+  /* Video */
+  .video-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 56px;
+    align-items: center;
+  }
+
+  .video-placeholder {
+    background: #2A2A2A;
+    border: 1px solid #3A3A3A;
+    aspect-ratio: 16 / 9;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    color: #B8B0A4;
+  }
+
+  .play-icon {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    border: 2px solid #B8B0A4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+  }
+
+  /* Gallery */
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-top: 48px;
+  }
+
+  .gallery-item figcaption {
+    margin-top: 10px;
+    font-size: 0.85rem;
+    color: var(--charcoal);
+  }
+
+  /* Lifestyle */
+  .lifestyle-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    margin-top: 48px;
+  }
+
+  .lifestyle-item figcaption {
+    margin-top: 10px;
+    font-size: 0.85rem;
+    color: var(--charcoal);
+  }
+
+  .staged-note {
+    margin-top: 24px;
+    font-size: 0.85rem;
+    font-style: italic;
+    color: #6b6b6b;
+  }
+
+  /* Location cards */
+  .location-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    margin-top: 48px;
+  }
+
+  .location-card {
+    background: var(--tan);
+    padding: 32px;
+    border-radius: 2px;
+  }
+
+  .location-card .card-label {
+    color: var(--gold);
+    font-weight: 500;
+    font-size: 1.05rem;
+    margin-bottom: 8px;
+    display: block;
+  }
+
+  .location-card .card-desc {
+    font-size: 0.92rem;
+    color: var(--charcoal);
+  }
+
+  /* CTA section */
+  .cta-section {
+    text-align: center;
+  }
+
+  .cta-section .wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .cta-section .body-text {
+    margin: 0 auto;
+  }
+
+  .cta-section .btn-group {
+    justify-content: center;
+  }
+
+  /* Contact section */
+  .contact-layout {
+    display: flex;
+    align-items: flex-start;
+    gap: 40px;
+    flex-wrap: wrap;
+  }
+
+  .headshot-placeholder {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background: var(--placeholder);
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #7a7a7a;
+    font-size: 0.7rem;
+    text-align: center;
+    padding: 8px;
+  }
+
+  .contact-info h2 {
+    margin-bottom: 8px;
+  }
+
+  .affiliation {
+    font-size: 0.9rem;
+    color: var(--gold);
+    margin-top: 8px;
+    margin-bottom: 28px;
+  }
+
+  .contact-btn-row {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  /* Footer */
+  footer {
+    background: var(--dark);
+    color: #fff;
+    padding: 48px 0;
+    font-size: 0.85rem;
+  }
+
+  footer .footer-address {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    margin-bottom: 16px;
+  }
+
+  footer .disclaimer {
+    color: #999;
+    max-width: 800px;
+    margin-bottom: 20px;
+    font-size: 0.78rem;
+    line-height: 1.6;
+  }
+
+  footer .footer-contact {
+    color: #ccc;
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    section { padding: 48px 0; }
+
+    h2 { font-size: 1.7rem; }
+
+    .hero-content h1 { font-size: 2.2rem; }
+
+    .two-col {
+      grid-template-columns: 1fr;
+      gap: 32px;
+    }
+
+    .floorplan-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .video-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .gallery-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .lifestyle-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .location-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .stats-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px 24px;
+    }
+
+    .contact-layout {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .contact-btn-row {
+      justify-content: center;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .hero-content h1 { font-size: 1.8rem; }
+
+    .gallery-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .btn-group, .contact-btn-row {
+      flex-direction: column;
+      width: 100%;
+    }
+
+    .btn {
+      text-align: center;
+      width: 100%;
+    }
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<header class="hero">
+  <!-- PHOTO: hero-exterior -->
+  <div class="hero-photo-placeholder">PHOTO: hero-exterior</div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <span class="eyebrow">Aurora, Colorado | Ridgeview Eagle Bend</span>
+    <h1>22027 E Jamison Place</h1>
+    <p class="subtext">Golf course community feel. Cherry Creek Schools. Low-maintenance townhome living with room to spread out.</p>
+    <div class="btn-group">
+      <a href="sms:+13036193052" class="btn btn-outline-cream">Text Marc About This Home</a>
+      <a href="#video" class="btn btn-outline-cream">View Property Video</a>
+    </div>
+  </div>
+</header>
+
+<!-- SECTION 1 — OVERVIEW -->
+<section>
+  <div class="wrap">
+    <span class="eyebrow">A Better Landing Page Than a Listing Feed</span>
+    <h2>Established, comfortable, and easy to live in.</h2>
+    <p class="body-text">This townhome gives buyers the things that matter day to day: a low-maintenance setup, a comfortable multi-level layout, Cherry Creek Schools, a two-car garage, and a southeast metro location with easy routes around town.</p>
+
+    <div class="stats-grid">
+      <div class="stat-item">
+        <div class="stat-value">$520,000</div>
+        <div class="stat-label">List Price</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-value">3</div>
+        <div class="stat-label">Bedrooms</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-value">4</div>
+        <div class="stat-label">Bathrooms</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-value">2-Car</div>
+        <div class="stat-label">Attached Garage</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-value">1,837</div>
+        <div class="stat-label">Finished Square Feet</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-value">2,430</div>
+        <div class="stat-label">Total Square Feet</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-value">$325/mo</div>
+        <div class="stat-label">HOA</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-value">Cherry Creek</div>
+        <div class="stat-label">School District</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 2 — LAYOUT -->
+<section>
+  <div class="wrap">
+    <div class="two-col">
+      <div>
+        <h2>Townhome living without feeling boxed in.</h2>
+        <p class="body-text">The layout gives you separation between spaces, practical storage, a real garage, and multiple levels that help the home feel larger than a flat condo or apartment-style setup.</p>
+        <ul class="bullets">
+          <li>Open main living level with kitchen, dining, living room, and deck access.</li>
+          <li>Upper-level bedrooms with a primary suite and walk-in closet.</li>
+          <li>Lower-level bedroom, bath, utility space, foyer, and attached garage.</li>
+          <li>Set in an established community with a golf course feel and southeast metro convenience.</li>
+        </ul>
+      </div>
+      <div>
+        <!-- PHOTO: living-room-fireplace -->
+        <div class="photo-placeholder">PHOTO: living-room-fireplace</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 3 — FLOOR PLANS -->
+<section>
+  <div class="wrap">
+    <span class="eyebrow">Layout Matters</span>
+    <h2>See how the home actually lives.</h2>
+    <p class="body-text">Floor plans are included here so you can understand the flow before you schedule a showing. The home has three levels, with the garage and one bedroom on the lower level, main living spaces above, and two bedrooms on the upper level.</p>
+
+    <div class="floorplan-grid">
+      <figure class="floorplan-item">
+        <!-- FLOORPLAN: lower-level -->
+        <div class="photo-placeholder">FLOORPLAN: lower-level</div>
+        <figcaption>Lower Level</figcaption>
+      </figure>
+      <figure class="floorplan-item">
+        <!-- FLOORPLAN: main-level -->
+        <div class="photo-placeholder">FLOORPLAN: main-level</div>
+        <figcaption>Main Level</figcaption>
+      </figure>
+      <figure class="floorplan-item">
+        <!-- FLOORPLAN: upper-level -->
+        <div class="photo-placeholder">FLOORPLAN: upper-level</div>
+        <figcaption>Upper Level</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 4 — VIDEO -->
+<section class="dark-section" id="video">
+  <div class="wrap">
+    <div class="video-grid">
+      <div>
+        <span class="eyebrow">Full Property Video</span>
+        <h2>Take a closer look inside.</h2>
+        <p class="body-text">Photos and floor plans help, but video gives you a better feel for the flow of the home. This section is reserved for the full property video once it is uploaded.</p>
+        <div class="btn-group">
+          <a href="sms:+13036193052" class="btn btn-outline-cream">Ask Marc for the Video</a>
+        </div>
+      </div>
+      <div>
+        <!-- VIDEO: property-tour-embed -->
+        <div class="video-placeholder">
+          <div class="play-icon">&#9658;</div>
+          <span>Video coming soon</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 5 — PHOTO GALLERY -->
+<section>
+  <div class="wrap">
+    <span class="eyebrow">Curated Property Gallery</span>
+    <h2>The spaces buyers will care about most.</h2>
+    <p class="body-text">The gallery focuses on the exterior, kitchen, living space, bathrooms, bedrooms, storage, and layout. Enough to understand the home without turning the page into a photo dump.</p>
+
+    <div class="gallery-grid">
+      <figure class="gallery-item">
+        <!-- PHOTO: exterior-garage -->
+        <div class="photo-placeholder">PHOTO: exterior-garage</div>
+        <figcaption>Exterior with attached two-car garage</figcaption>
+      </figure>
+      <figure class="gallery-item">
+        <!-- PHOTO: kitchen-appliances -->
+        <div class="photo-placeholder">PHOTO: kitchen-appliances</div>
+        <figcaption>Kitchen with stainless appliances</figcaption>
+      </figure>
+      <figure class="gallery-item">
+        <!-- PHOTO: living-area-fireplace -->
+        <div class="photo-placeholder">PHOTO: living-area-fireplace</div>
+        <figcaption>Main living area with fireplace</figcaption>
+      </figure>
+      <figure class="gallery-item">
+        <!-- PHOTO: dining-nook -->
+        <div class="photo-placeholder">PHOTO: dining-nook</div>
+        <figcaption>Dining nook off the kitchen</figcaption>
+      </figure>
+      <figure class="gallery-item">
+        <!-- PHOTO: bedroom-natural-light -->
+        <div class="photo-placeholder">PHOTO: bedroom-natural-light</div>
+        <figcaption>Bedroom with natural light</figcaption>
+      </figure>
+      <figure class="gallery-item">
+        <!-- PHOTO: primary-bedroom -->
+        <div class="photo-placeholder">PHOTO: primary-bedroom</div>
+        <figcaption>Primary bedroom</figcaption>
+      </figure>
+      <figure class="gallery-item">
+        <!-- PHOTO: lower-level-bedroom -->
+        <div class="photo-placeholder">PHOTO: lower-level-bedroom</div>
+        <figcaption>Lower-level bedroom</figcaption>
+      </figure>
+      <figure class="gallery-item">
+        <!-- PHOTO: primary-bathroom -->
+        <div class="photo-placeholder">PHOTO: primary-bathroom</div>
+        <figcaption>Primary bathroom</figcaption>
+      </figure>
+      <figure class="gallery-item">
+        <!-- PHOTO: walkin-closet -->
+        <div class="photo-placeholder">PHOTO: walkin-closet</div>
+        <figcaption>Walk-in closet storage</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 6 — LIFESTYLE -->
+<section>
+  <div class="wrap">
+    <span class="eyebrow">The Lifestyle Angle</span>
+    <h2>A different kind of townhome living.</h2>
+    <p class="body-text">The value is not only inside the walls. It is the established setting, the golf course community feel, the school district, the garage, the floor plan, and the ability to live comfortably without taking on a detached single-family home.</p>
+
+    <div class="lifestyle-grid">
+      <figure class="lifestyle-item">
+        <!-- PHOTO: staged-living-space -->
+        <div class="photo-placeholder">PHOTO: staged-living-space</div>
+        <figcaption>Living space, digitally styled for feel</figcaption>
+      </figure>
+      <figure class="lifestyle-item">
+        <!-- PHOTO: staged-dining-nook -->
+        <div class="photo-placeholder">PHOTO: staged-dining-nook</div>
+        <figcaption>Dining nook, digitally styled for scale</figcaption>
+      </figure>
+    </div>
+    <p class="staged-note">Some images have been virtually staged to illustrate scale and potential use of space.</p>
+  </div>
+</section>
+
+<!-- SECTION 7 — LOCATION -->
+<section>
+  <div class="wrap">
+    <h2>Connected to the southeast metro.</h2>
+    <p class="body-text">Jamison Place sits in an established Aurora community with Cherry Creek Schools, nearby golf course surroundings, and convenient access toward E-470, DTC, Southlands, Parker, and other southeast metro destinations.</p>
+
+    <div class="location-grid">
+      <div class="location-card">
+        <span class="card-label">Aurora</span>
+        <span class="card-desc">Established southeast metro setting.</span>
+      </div>
+      <div class="location-card">
+        <span class="card-label">Ridgeview Eagle Bend</span>
+        <span class="card-desc">Community feel with golf course surroundings.</span>
+      </div>
+      <div class="location-card">
+        <span class="card-label">Cherry Creek Schools</span>
+        <span class="card-desc">A major location benefit for many buyers.</span>
+      </div>
+      <div class="location-card">
+        <span class="card-label">Easy Routes</span>
+        <span class="card-desc">Access toward E-470, DTC, Southlands, and Parker.</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 8 — CTA -->
+<section class="dark-section cta-section">
+  <div class="wrap">
+    <span class="eyebrow">See It in Person</span>
+    <h2>Photos help. Walking it matters more.</h2>
+    <p class="body-text">The best way to understand the layout, the levels, the light, and the community setting is to see it in person.</p>
+    <div class="btn-group">
+      <a href="sms:+13036193052" class="btn btn-outline-cream">Schedule a Private Tour</a>
+      <a href="tel:+13036193052" class="btn btn-outline-cream">Call Marc</a>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 9 — CONTACT -->
+<section>
+  <div class="wrap">
+    <span class="eyebrow">Your Contact</span>
+    <div class="contact-layout">
+      <!-- PHOTO: agent-headshot -->
+      <div class="headshot-placeholder">PHOTO: agent-headshot</div>
+      <div class="contact-info">
+        <h2>Marc Bayes</h2>
+        <p class="body-text">Have a question about the home, the community, or whether it fits your search? Reach out and I'll help you sort through it.</p>
+        <p class="affiliation">Keller Williams Realty DTC | Colorado Lifestyle Real Estate Group</p>
+        <div class="contact-btn-row">
+          <a href="sms:+13036193052" class="btn btn-fill-dark">Text</a>
+          <a href="tel:+13036193052" class="btn btn-fill-dark">Call</a>
+          <a href="mailto:marcbayes@kw.com" class="btn btn-fill-dark">Email</a>
+          <a href="https://linktr.ee/marcbayes" target="_blank" class="btn btn-fill-dark">Linktree</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="footer-address">22027 E Jamison Place | Aurora, Colorado</div>
+    <p class="disclaimer">Property details are provided for marketing purposes and should be verified by buyers. Some images may be AI-enhanced, virtually styled, or digitally adjusted to help show scale, layout, or potential use of space. They should not be treated as a substitute for an in-person showing or buyer due diligence.</p>
+    <div class="footer-contact">Marc Bayes | 303-619-3052 | marcbayes@kw.com | linktr.ee/marcbayes</div>
+  </div>
+</footer>
+
+</body>
+</html>
